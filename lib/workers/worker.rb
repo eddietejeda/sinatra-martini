@@ -1,4 +1,4 @@
-class DownloadTweetWorker
+class GenericWorker
 	include Sidekiq::Worker
   sidekiq_options retry: 3
 	

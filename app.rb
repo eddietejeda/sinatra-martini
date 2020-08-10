@@ -12,7 +12,6 @@ class App < Sinatra::Base
       provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
     end  
     set :cookie_options, :expires => Time.new + 30.days
-    # set :public_folder, File.dirname(__FILE__) + '/public'
   end
   
   get '/' do    
@@ -29,7 +28,7 @@ class App < Sinatra::Base
 
 
 
-  get '/auth/twitter/callback' do
+  get '/auth/:provider/callback' do
     session[:uid] = env['omniauth.auth']['uid']
     session[:image] = env['omniauth.auth']['info']['image']
     session[:nickname] = env['omniauth.auth']['info']['nickname']    
@@ -39,17 +38,18 @@ class App < Sinatra::Base
   end
   
   get '/auth/failure' do
-    @alert = "<h1>Authentication Failed:</h1><h3>message:<h3> <pre>#{params}</pre>"
+    @alert = "<h1>Authentication Failed.</h1>"
+    logger.error "Authentication Failed: #{params.inspect}"
     erb :index
   end
   
-  get '/auth/twitter/deauthorized' do
+  get '/auth/:provider/deauthorized' do
     @alert = "<h1>Twitter has deauthorized this app.</h1>"
     erb :index
   end
   
   get '/logout' do
-    session[:authenticated] = false
+    session.clear
     redirect '/'
   end
 

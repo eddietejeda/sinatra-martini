@@ -25,7 +25,7 @@ Stripe.api_key = ENV['STRIPE_SECRET_KEY'] || "secret"
 # Curl settings
 require 'curb'
 Curl::Easy.perform("http://www.google.co.uk") do |curl|
-  curl.headers["User-Agent"] = "myapp-0.0"
+  curl.headers["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36"
   curl.verbose = true
 end
 

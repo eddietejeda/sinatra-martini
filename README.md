@@ -1,6 +1,6 @@
-# sinatra martini
+# Sinatra Martini
 
-Hobbiest ruby web framework to help me get started on new projects using a common structure.
+Hobbiest ruby boilerplate to help me get started on new projects using a common structure.
 
 Target audience: just me, but feel free to use.
 
@@ -10,7 +10,7 @@ Boiler plate for building simple web apps with only a couple of pages.
 
 1. Fast booting
 1. 12-factor
-1. Simple sinatra structure
+1. Simple Sinatra structure
 1. Support the concept of a user login and basic omni-auth (example defaults to twitter)
 1. Support RGeo
 1. SaaS for stylesheets
@@ -26,5 +26,5 @@ bundle exec rake db:create_migration NAME=create_users_table
 
 
 # Credits
-- Martini Icon by [Francisco Tavares](https://thenounproject.com/term/martini/51460/)
-
+- Martini icon by [Francisco Tavares](https://thenounproject.com/term/martini/51460/)
+- Design by [BulmaTemplates](https://github.com/BulmaTemplates/)

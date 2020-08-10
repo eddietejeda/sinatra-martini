@@ -27,7 +27,7 @@
 
 // Import only what you need from Bulma
 @import "~bulma/bulma";
-
+//@import "~mapbox-gl/dist/mapbox-gl";
 
 :root {
   --brandColor: hsl(166, 67%, 51%);
@@ -110,6 +110,9 @@ input:focus {
 }
 
 .logo{
-  width: 50%;
+  width: 40%;
 }
 
+.mapboxgl-ctrl-attrib-inner{
+  font-size: 60%;
+}

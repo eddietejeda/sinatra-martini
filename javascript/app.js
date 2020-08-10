@@ -1,8 +1,4 @@
-// import _ from 'lodash';
-// import '../public/app.css';
-// import Logo from '../images/logo-lg.png';
-// import Data from './data.xml';
-// import * from 'map'
+import map from "./map"
 
 function app() {
   const element = document.createElement('div');
@@ -13,4 +9,4 @@ function app() {
   return element;
 }
 
-// document.body.appendChild(app());
+document.body.appendChild(app());

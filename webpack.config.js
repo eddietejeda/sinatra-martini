@@ -9,20 +9,24 @@ module.exports = {
     filename: 'app.js'
   },
   module: {
-    rules: [{
-      test: /\.(sass|scss)$/,
-      use: [
-        "style-loader",
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-              hmr: process.env.NODE_ENV === 'development'
-          }
-        },
-        "css-loader",
-        "sass-loader"
-      ]
-    }]
+    rules: [
+      {
+        test: /\.(css|scss|sass)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                outputStyle: 'compressed',
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new Dotenv(),
